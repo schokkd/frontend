@@ -211,75 +211,154 @@ a article h2, a article p {
 .creative img {
     width: 100%;
     height: 100%;
-    background-color: black; /* fallback color */
     background-position: center;
     background-size: cover;
 }
 
 
 /* School Styling */
-
-.school article.school {
+#mainschool {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 1vh;
+    grid-row-gap: 1vw;
+}
+main #mainschool article {
     grid-column: 1;
 }
 
-.school img {
+#mainschool img {
     width: 100%;
     height: 100%;
-    background-color: black; /* fallback color " */
-    background-position: center;
-    background-size: cover;
-    background: rgba(0, 0, 0, .6);
 }
 
-.school h3 {
+#mainschool article h3 {
     z-index: 1;
     margin-top: -5em;
     margin-left: 1em;
     font-size: 3em;
-    text-shadow: -1.5px 0 white, 0 1.5px white,
+    text-shadow: -2px 0 white, 0 2px white,
     1.5px 0 white, 0 -1.5px white; /* bron: https://stackoverflow.com/questions/11323813/how-to-outline-text-in-html-css#17205396 */
     -webkit-font-smoothing: antialiased;
 }
 
+
+/* End of School styling */
+/* form styling! */
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+}
+
+#contact h3 {
+    font-size: 1.5em;
+    color: white;
+    font-family: "Circular Std";
+    margin-top: 20vh;
+}
+
+legend {
+    font-size: 1.5em;
+    color: white;
+    font-family: "Circular Std Bold";
+}
 form {
     color: white;
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
+    width: 90vw;
+    height: 70vh;
+    justify-content: space-between;
     align-content: center;
+    align-items: center;
+
 }
 
 fieldset {
-    width: 50vw;
-    height: 50vh;
-    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    justify-content: center;
+    align-content: center;
     align-items: center;
+    padding-left: 1%;
 }
 
-label, legend {
+label {
+    align-content: center;
+    font-size: 1em;
+    display: block;
+}
+
+input[type=email] {
+    display: block;
     font-size: 1em;
 }
 
-input:valid {
-    border: green 2px;
+input[type=email]:valid {
+    border: solid green 3px;
+}
+
+input[type=email]:invalid {
+    border: solid red 2px;
+}
+
+input[type=textarea] {
+    display: inline-block;
+    width: 75vw;
+    height: 25vh;
+    font-size: 1em;
+}
+
+textarea {
+    display: inline-block;
+    width: 98%;
+    height: 25vh;
+    font-size: 1em;
+    resize: none;
+}
+
+input[type=radio] {
+    display: inline-block;
+    margin: 3% 1%;
+    width: 2em;
+    height: 2em;
+    background-color: #259acc;
 }
 
 button {
     display: flex;
-    height: 5vh;
-    width: 20vw;
+    font-size: 1.5em;
+}
+button:hover {
+    background-color: #444444;
+    color: white;
+}
+/* Hidden class.*/
+.hidden {
+    display: none;
 }
 
-/* End of School styling */
 /* Media Query Time. */
 
 @media (min-width: 570px) {
- #maincreative {
+    header {
+        z-index: 1; /* makes zooming anim go underneath the header. */
+    }
+
+    #maincreative {
      grid-template-columns: 1fr 1fr;
      grid-template-rows: repeat(4, 1fr);
- }
+    }
+
+    #mainschool {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
 
     .creative:hover, creative:focus {
         transform: scale(1.05);
@@ -290,9 +369,12 @@ button {
 @media (min-width: 960px) {
     header {
         justify-content: space-between;
-        z-index: 1;
     }
     #maincreative {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    #mainschool {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(3, 1fr);
     }
