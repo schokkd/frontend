@@ -77,6 +77,8 @@ header a {
 
 header a:hover {
     color: #111111;
+    border-bottom: 2px solid currentColor;
+    line-height: .9;
     transition: 0.3s;
 }
 
@@ -208,13 +210,30 @@ a article h2, a article p {
 }
 
 
-.creative img {
+#maincreative article img {
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
 }
 
+footer {
+    display: inline-flex;
+    background-color: #333333;
+    z-index: 1;
+}
+
+footer a {
+    text-decoration: none;
+    padding: 1%;
+    color: #f1f1f1f1;
+}
+
+footer a:hover {
+    border-bottom: 2px solid currentColor;
+    line-height: 1;
+    transition: .2s ease-in-out;
+}
 
 /* School Styling */
 #mainschool {
@@ -233,11 +252,12 @@ main #mainschool article {
     height: 100%;
 }
 
-#mainschool article h3 {
-    z-index: 1;
+#mainschool h3 {
+    z-index: 2;
+    overflow: hidden;
     margin-top: -5em;
     margin-left: 1em;
-    font-size: 3em;
+    font-size: 2.5em;
     text-shadow: -2px 0 white, 0 2px white,
     1.5px 0 white, 0 -1.5px white; /* bron: https://stackoverflow.com/questions/11323813/how-to-outline-text-in-html-css#17205396 */
     -webkit-font-smoothing: antialiased;
@@ -360,7 +380,13 @@ button:hover {
         grid-template-rows: repeat(4, 1fr);
     }
 
-    .creative:hover, creative:focus {
+    #mainschool img:hover {
+        transform: scale(1.01);
+        z-index: 1;
+        transition: all 0.5s;
+    }
+
+    #maincreative img:hover, #maincreative img:focus {
         transform: scale(1.05);
         transition: all 0.5s;
     }
@@ -378,9 +404,6 @@ button:hover {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(3, 1fr);
     }
-    .creative:nth-child(even) {
-          grid-column: 0 / 2;
-        grid-row: 0 / 2;
-      }
+
 }
 

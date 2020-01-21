@@ -7,19 +7,19 @@
 </head>
 <body>
 <header>
-    <a href="../index.html">
+    <a href="../index.html" tabindex="1">
         <h1 id="navtitle">Schokkd</h1>
     </a>
     <nav>
         <ul>
             <li>
-                <a href="creative.html">Creative</a>
+                <a href="creative.html" tabindex="2">Creative</a>
             </li>
             <li>
-                <a href="school.html">School</a>
+                <a href="school.html" tabindex="3">School</a>
             </li>
             <li>
-                <a href="contact.html" class="active">Contact</a>
+                <a href="contact.html" class="active" tabindex="4">Contact</a>
             </li>
         </ul>
     </nav>
@@ -32,21 +32,21 @@
     <form>
     <fieldset>
         <legend>Get in touch!</legend>
-        <label for="Email">Email
+        <label for="Email" tabindex="5"> Email
             <input id="Email" type="email" name="Email" placeholder="johnappleseed@mail.com">
         </label>
         <legend>What's it about?</legend>
         <label for="radio1">
-            <input id="radio1" type="radio" name="wia" value="Creative">Creative
+            <input id="radio1" type="radio" name="wia" value="Creative" tabindex="6">Creative
         </label>
         <label for="radio2">
-            <input id="radio2" type="radio" name="wia" value="School">School
+            <input id="radio2" type="radio" name="wia" value="School" tabindex="7">School
         </label>
         <label for="textinput">Care to elaborate?</label>
-            <textarea id="textinput" type="textarea" placeholder="Tell me a bit more, please!" autocapitalize="sentences" autocomplete="on">
+            <textarea id="textinput" type="textarea" placeholder="Tell me a bit more, please!" autocapitalize="sentences" autocomplete="on" tabindex="8">
             </textarea>
         </label>
-        <button onclick="bevestiging()" type="button">Send!</button>
+        <button onclick="bevestiging()" type="button" tabindex="9">Send!</button>
     </fieldset>
 
     </form>
